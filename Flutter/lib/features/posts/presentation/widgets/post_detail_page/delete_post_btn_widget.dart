@@ -23,7 +23,12 @@ class DeletePostBtnWidget extends StatelessWidget {
           Colors.redAccent,
         ),
       ),
-      onPressed: () => deleteDialog(context, postId),
+      onPressed: () {
+        BlocProvider.of<AddDeleteUpdatePostBloc>(context)
+            .add(DeletePostEvent(postId: postId));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Deleted Successfully"),backgroundColor: Colors.green,));
+      },
       icon: Icon(Icons.delete_outline),
       label: Text("Delete"),
     );

@@ -14,61 +14,51 @@ class PostDetailWidgetAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+     padding: const EdgeInsets.all(8),
       child: Column(
         children: [
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-           
-            children: [
-              Image.network(
-                 post.image,
-                 //width: 80
-              ),
-          
-              Column(
-                children : [
-                  Text(
-                   post.name,
-                    style: const TextStyle(
-                     fontSize: 22,
-                     fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  const Divider(
-                    height: 50,
-                  ),
-
-                  Text( "By "+ post.userId,
-                    style: const TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ]
-             )
-            ],
-          ),
-          
-          const Divider(
-            height: 50,
-          ),
-          Text( "Date : " +
-            post.date,
-            style: const TextStyle(
-              fontSize: 18,
+          Text(
+            post.name,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
           ),
-          const Divider(
+          Divider(
             height: 50,
           ),
-          Text(
+          Image.network(
+            post.image,
+            // width: 80
+          ),
+          Divider(
+            height: 50,
+          ),
+          Text("Description :  "+
             post.description,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 16,
             ),
           ),
-          const Divider(
+          Divider(
+            height: 50,
+          ),
+          Text("By : "+
+            post.userId,
+            style: TextStyle(
+              fontSize: 10,
+            ),
+          ),
+          Divider(
+            height: 50,
+          ),
+          Text("Date : "+
+            post.date,
+            style: TextStyle(
+              fontSize: 10,
+            ),
+          ),
+          Divider(
             height: 50,
           ),
           Row(
